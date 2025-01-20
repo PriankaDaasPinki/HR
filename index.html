@@ -9,24 +9,7 @@
       rel="stylesheet"
     />
     <link href="./style.css" rel="stylesheet" />
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const weightCompetenciesCells = document.querySelectorAll(".weightCompetencies");
-        const subtotalWeightCompetenciesCell = document.querySelector("#subtotalWeightCompetencies");
-
-        function sum(p1, p2) {
-          let subtotal = 0;
-          p1.forEach((cell) => {
-            subtotal += parseFloat(cell.textContent) || 0;
-          });
-
-          p2.textContent = subtotal.toFixed(2);
-          return subtotal;
-        }
-
-        sum(weightCompetenciesCells, subtotalWeightCompetenciesCell);
-      });
-    </script>
+    <script src="./script.js"></script>
   </head>
   <body>
     <div class="container mt-4 p-4">
@@ -227,143 +210,343 @@
         3. Perforamnce Index and Rating (Core Competencies, Capacity,
         Development and Potentiality of Leadership Role) :
       </div>
-      <table class="table table-bordered text-center">
-        <thead>
-          <tr>
-            <td class="bg-primary text-center fw-bold">Competencies</td>
-            <td class="bg-primary text-center fw-bold">UOM</td>
-            <td class="bg-primary text-center fw-bold">Weight</td>
-            <td class="bg-primary text-center fw-bold">Target</td>
-            <td class="bg-primary text-center fw-bold">Actual</td>
-            <td class="bg-primary text-center fw-bold">Achv%</td>
-            <td class="bg-primary text-center fw-bold">Self Rating</td>
-            <td class="bg-primary text-center fw-bold">Reporting</td>
-            <td class="bg-primary text-center fw-bold">Score</td>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="text-left">1. Intergrity</td>
-            <td>%</td>
-            <td class="weightCompetencies">5</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>5</td>
-            <td>5</td>
-            <td>0.25</td>
-          </tr>
-          <tr>
-            <td class="text-left">2. Personal Effectiveness</td>
-            <td>%</td>
-            <td class="weightCompetencies">5</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>5</td>
-            <td>5</td>
-            <td>0.25</td>
-          </tr>
-          <tr>
-            <td class="text-left">3. Agility</td>
-            <td>%</td>
-            <td class="weightCompetencies">5</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>5</td>
-            <td>5</td>
-            <td>0.25</td>
-          </tr>
-          <tr>
-            <td class="text-left">4. Problem Solving</td>
-            <td>%</td>
-            <td class="weightCompetencies">5</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>5</td>
-            <td>5</td>
-            <td>0.25</td>
-          </tr>
-          <tr>
-            <td class="text-left">5. Diversity, Equity & Inclusion</td>
-            <td>%</td>
-            <td class="weightCompetencies">5</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>5</td>
-            <td>5</td>
-            <td>0.25</td>
-          </tr>
-          <tr>
-            <td class="text-left">6. Process Orientation</td>
-            <td>%</td>
-            <td class="weightCompetencies">5</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>5</td>
-            <td>5</td>
-            <td>0.25</td>
-          </tr>
-          <tr>
-            <td class="text-left">7. Ownership</td>
-            <td>%</td>
-            <td class="weightCompetencies">5</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>5</td>
-            <td>5</td>
-            <td>0.25</td>
-          </tr>
-          <tr>
-            <td class="text-left">8. Collaboration & Communication</td>
-            <td>%</td>
-            <td class="weightCompetencies">5</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>5</td>
-            <td>5</td>
-            <td>0.25</td>
-          </tr>
-          <tr>
-            <td class="text-left">9. Building High Performance Team</td>
-            <td>%</td>
-            <td class="weightCompetencies">5</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>5</td>
-            <td>5</td>
-            <td>0.25</td>
-          </tr>
-          <tr>
-            <td class="text-left">10. Authority Delegation</td>
-            <td>%</td>
-            <td class="weightCompetencies">5</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>5</td>
-            <td>5</td>
-            <td>0.25</td>
-          </tr>
-        </tbody>
-        <tfoot class="bg-primary">
-          <tr>
-            <td colspan="2" class="bg-primary text-right fw-bold">
-              Sub Total =
-            </td>
-            <td class="bg-primary text-center fw-bold" id="subtotalWeightCompetencies"></td>
-            <td class="bg-primary text-center fw-bold"></td>
-            <td class="bg-primary text-center fw-bold"></td>
-          </tr>
-        </tfoot>
-      </table>
+      <div class="table-responsive">
+        <table class="table table-bordered text-center">
+          <thead>
+            <tr>
+              <td class="bg-primary text-center fw-bold">Competencies</td>
+              <td class="bg-primary text-center fw-bold">UOM</td>
+              <td class="bg-primary text-center fw-bold">Weight</td>
+              <td class="bg-primary text-center fw-bold">Target</td>
+              <td class="bg-primary text-center fw-bold">Actual</td>
+              <td class="bg-primary text-center fw-bold">Achv%</td>
+              <td class="bg-primary text-center fw-bold">Self Rating</td>
+              <td class="bg-primary text-center fw-bold">Reporting</td>
+              <td class="bg-primary text-center fw-bold">Score</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="text-left">1. Intergrity</td>
+              <td>%</td>
+              <td class="weightCompetencies">5</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td class="selfRating">
+                <input
+                  type="number"
+                  class="form-control text-center"
+                  id="selfRatingCompetenciesIntergrity"
+                  placeholder="Self Rating"
+                />
+              </td>
+              <td class="reportingCompetencies">
+                <input
+                  type="number"
+                  id="reportingCompetenciesIntergrity"
+                  class="form-control text-center"
+                  placeholder="Reporting Rate"
+                />
+              </td>
+              <td
+                class="scoreCompetencies"
+                id="scoreCompetenciesIntergrity"
+              ></td>
+            </tr>
+            <tr>
+              <td class="text-left">2. Personal Effectiveness</td>
+              <td>%</td>
+              <td class="weightCompetencies">5</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td class="selfRating">
+                <input
+                  type="number"
+                  class="form-control text-center"
+                  id="selfRatingCompetenciesEffectiveness"
+                  placeholder="Self Rating"
+                />
+              </td>
+              <td
+                class="reportingCompetencies"
+                id="reportingCompetenciesEffectiveness"
+              >
+                <input
+                  type="number"
+                  id="reportingCompetenciesEffectiveness"
+                  class="form-control text-center"
+                  placeholder="Reporting Rate"
+                />
+              </td>
+              <td
+                class="scoreCompetencies"
+                id="scoreCompetenciesEffectiveness"
+              ></td>
+            </tr>
+            <tr>
+              <td class="text-left">3. Agility</td>
+              <td>%</td>
+              <td class="weightCompetencies">5</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td class="selfRating">
+                <input
+                  type="number"
+                  class="form-control text-center"
+                  id="selfRatingCompetenciesAgility"
+                  placeholder="Self Rating"
+                />
+              </td>
+              <td
+                class="reportingCompetencies"
+                id="reportingCompetenciesAgility"
+              >
+                <input
+                  type="number"
+                  id="reportingCompetenciesAgility"
+                  class="form-control text-center"
+                  placeholder="Reporting Rate"
+                />
+              </td>
+              <td class="scoreCompetencies" id="scoreCompetenciesAgility"></td>
+            </tr>
+            <tr>
+              <td class="text-left">4. Problem Solving</td>
+              <td>%</td>
+              <td class="weightCompetencies">5</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td class="selfRating">
+                <input
+                  type="number"
+                  class="form-control text-center"
+                  id="selfRatingCompetenciesProblemSolving"
+                  placeholder="Self Rating"
+                />
+              </td>
+              <td
+                class="reportingCompetencies"
+                id="reportingCompetenciesProblemSolving"
+              >
+                <input
+                  type="number"
+                  id="reportingCompetenciesProblemSolving"
+                  class="form-control text-center"
+                  placeholder="Reporting Rate"
+                />
+              </td>
+              <td
+                class="scoreCompetencies"
+                id="scoreCompetenciesProblemSolving"
+              ></td>
+            </tr>
+            <tr>
+              <td class="text-left">5. Diversity, Equity & Inclusion</td>
+              <td>%</td>
+              <td class="weightCompetencies">5</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td class="selfRating">
+                <input
+                  type="number"
+                  class="form-control text-center"
+                  id="selfRatingCompetenciesDiversityEquity&Inclusion"
+                  placeholder="Self Rating"
+                />
+              </td>
+              <td class="reportingCompetencies">
+                <input
+                  type="number"
+                  id="reportingCompetenciesDiversityEquity&Inclusion"
+                  class="form-control text-center"
+                  placeholder="Reporting Rate"
+                />
+              </td>
+              <td
+                class="scoreCompetencies"
+                id="scoreCompetenciesDiversityEquity&Inclusion"
+              ></td>
+            </tr>
+            <tr>
+              <td class="text-left">6. Process Orientation</td>
+              <td>%</td>
+              <td class="weightCompetencies">5</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td class="selfRating">
+                <input
+                  type="number"
+                  class="form-control text-center"
+                  id="selfRatingCompetenciesProcessOrientation"
+                  placeholder="Self Rating"
+                />
+              </td>
+              <td class="reportingCompetencies">
+                <input
+                  type="number"
+                  id="reportingCompetenciesProcessOrientation"
+                  class="form-control text-center"
+                  placeholder="Reporting Rate"
+                />
+              </td>
+              <td
+                class="scoreCompetencies"
+                id="scoreCompetenciesProcessOrientation"
+              ></td>
+            </tr>
+            <tr>
+              <td class="text-left">7. Ownership</td>
+              <td>%</td>
+              <td class="weightCompetencies">5</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td class="selfRating">
+                <input
+                  type="number"
+                  class="form-control text-center"
+                  id="selfRatingCompetenciesOwnership"
+                  placeholder="Self Rating"
+                />
+              </td>
+              <td class="reportingCompetencies">
+                <input
+                  type="number"
+                  id="reportingCompetenciesOwnership"
+                  class="form-control text-center"
+                  placeholder="Reporting Rate"
+                />
+              </td>
+              <td
+                class="scoreCompetencies"
+                id="scoreCompetenciesOwnership"
+              ></td>
+            </tr>
+            <tr>
+              <td class="text-left">8. Collaboration & Communication</td>
+              <td>%</td>
+              <td class="weightCompetencies">5</td>
+              <td></td>
+              <td></td>
+
+              <td></td>
+              <td class="selfRating">
+                <input
+                  type="number"
+                  class="form-control text-center"
+                  id="selfRatingCompetenciesCollaboration&Communication"
+                  placeholder="Self Rating"
+                />
+              </td>
+              <td class="reportingCompetencies">
+                <input
+                  type="number"
+                  id="reportingCompetenciesCollaboration&Communication"
+                  class="form-control text-center"
+                  placeholder="Reporting Rate"
+                />
+              </td>
+              <td
+                class="scoreCompetencies"
+                id="scoreCompetenciesCollaboration&Communication"
+              ></td>
+            </tr>
+            <tr>
+              <td class="text-left">9. Building High Performance Team</td>
+              <td>%</td>
+              <td class="weightCompetencies">5</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td class="selfRating">
+                <input
+                  type="number"
+                  class="form-control text-center"
+                  id="selfRatingCompetenciesBuildingPerformance"
+                  placeholder="Self Rating"
+                />
+              </td>
+              <td class="reportingCompetencies">
+                <input
+                  type="number"
+                  id="reportingCompetenciesBuildingPerformance"
+                  class="form-control text-center"
+                  placeholder="Reporting Rate"
+                />
+              </td>
+              <td
+                class="scoreCompetencies"
+                id="scoreCompetenciesBuildingPerformance"
+              ></td>
+            </tr>
+            <tr>
+              <td class="text-left">10. Authority Delegation</td>
+              <td>%</td>
+              <td class="weightCompetencies">5</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td class="selfRating">
+                <input
+                  type="number"
+                  class="form-control text-center"
+                  id="selfRatingCompetenciesAuthorityDelegation"
+                  placeholder="Self Rating"
+                />
+              </td>
+              <td class="reportingCompetencies">
+                <input
+                  type="number"
+                  id="reportingCompetenciesAuthorityDelegation"
+                  class="form-control text-center"
+                  placeholder="Reporting Rate"
+                />
+              </td>
+              <td
+                class="scoreCompetencies"
+                id="scoreCompetenciesAuthorityDelegation"
+              ></td>
+            </tr>
+          </tbody>
+          <tfoot class="bg-primary">
+            <tr>
+              <td colspan="2" class="bg-primary text-right fw-bold">
+                Sub Total =
+              </td>
+              <td
+                class="bg-primary text-center fw-bold"
+                id="subtotalWeightCompetencies"
+              ></td>
+              <td class="bg-primary text-center fw-bold"></td>
+              <td class="bg-primary text-center fw-bold"></td>
+              <td class="bg-primary text-center fw-bold"></td>
+              <td
+                class="bg-primary text-center fw-bold"
+                id="subtotalSelfRating"
+              ></td>
+              <td
+                class="bg-primary text-center fw-bold"
+                id="subtotalReporting"
+              ></td>
+              <td
+                class="bg-primary text-center fw-bold"
+                id="subtotalScoreCompetencies"
+              ></td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+
+      <!-- KPI  -->
+      <div class="d-flex justify-content-start mt-3">
+        4. Perforamnce Index and Rating (KPI) :
+      </div>
     </div>
   </body>
 </html>
