@@ -97,17 +97,15 @@
         </table>
         <!-- Performance and Increment Index  -->
         <table class="table table-bordered ml-3">
-          <thead>
+          <thead class="bg-primary text-center fw-bold">
             <tr>
-              <td colspan="4" class="bg-primary text-center fw-bold">
-                Performance and Increment Index
-              </td>
+              <td colspan="4">Performance and Increment Index</td>
             </tr>
-            <tr class="text-center fw-bold">
-              <td class="bg-primary">Grade</td>
-              <td class="bg-primary">Obtained</td>
-              <td class="bg-primary">Score</td>
-              <td class="bg-primary">Inc.%</td>
+            <tr>
+              <td>Grade</td>
+              <td>Obtained</td>
+              <td>Score</td>
+              <td>Inc.%</td>
             </tr>
           </thead>
           <tbody>
@@ -212,17 +210,17 @@
       </div>
       <div class="table-responsive">
         <table class="table table-bordered text-center">
-          <thead>
+          <thead class="bg-primary">
             <tr>
-              <td class="bg-primary text-center fw-bold">Competencies</td>
-              <td class="bg-primary text-center fw-bold">UOM</td>
-              <td class="bg-primary text-center fw-bold">Weight</td>
-              <td class="bg-primary text-center fw-bold">Target</td>
-              <td class="bg-primary text-center fw-bold">Actual</td>
-              <td class="bg-primary text-center fw-bold">Achv%</td>
-              <td class="bg-primary text-center fw-bold">Self Rating</td>
-              <td class="bg-primary text-center fw-bold">Reporting</td>
-              <td class="bg-primary text-center fw-bold">Score</td>
+              <td class="text-center fw-bold">Competencies</td>
+              <td class="text-center fw-bold">UOM</td>
+              <td class="text-center fw-bold">Weight</td>
+              <td class="text-center fw-bold">Target</td>
+              <td class="text-center fw-bold">Actual</td>
+              <td class="text-center fw-bold">Achv%</td>
+              <td class="text-center fw-bold">Self Rating</td>
+              <td class="text-center fw-bold">Reporting</td>
+              <td class="text-center fw-bold">Score</td>
             </tr>
           </thead>
           <tbody>
@@ -520,22 +518,16 @@
                 Sub Total =
               </td>
               <td
-                class="bg-primary text-center fw-bold"
+                class="text-center fw-bold"
                 id="subtotalWeightCompetencies"
               ></td>
-              <td class="bg-primary text-center fw-bold"></td>
-              <td class="bg-primary text-center fw-bold"></td>
-              <td class="bg-primary text-center fw-bold"></td>
+              <td class="text-center fw-bold"></td>
+              <td class="text-center fw-bold"></td>
+              <td class="text-center fw-bold"></td>
+              <td class="text-center fw-bold" id="subtotalSelfRating"></td>
+              <td class="text-center fw-bold" id="subtotalReporting"></td>
               <td
-                class="bg-primary text-center fw-bold"
-                id="subtotalSelfRating"
-              ></td>
-              <td
-                class="bg-primary text-center fw-bold"
-                id="subtotalReporting"
-              ></td>
-              <td
-                class="bg-primary text-center fw-bold"
+                class="text-center fw-bold"
                 id="subtotalScoreCompetencies"
               ></td>
             </tr>
@@ -546,6 +538,303 @@
       <!-- KPI  -->
       <div class="d-flex justify-content-start mt-3">
         4. Perforamnce Index and Rating (KPI) :
+      </div>
+      <div class="table-responsive">
+        <table class="table table-bordered text-center">
+          <thead class="bg-primary">
+            <tr>
+              <td class="text-center fw-bold">SL.</td>
+              <td class="text-center fw-bold">
+                Key Performance Indicators (KPI)
+              </td>
+              <td class="text-center fw-bold">UOM</td>
+              <td class="text-center fw-bold">Weight</td>
+              <td class="text-center fw-bold">Target</td>
+              <td class="text-center fw-bold">Actual</td>
+              <td class="text-center fw-bold">Achv%</td>
+              <td class="text-center fw-bold">Self Rating</td>
+              <td class="text-center fw-bold">Reporting</td>
+              <td class="text-center fw-bold">Score</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>a)</td>
+              <td class="text-left">Efficiency</td>
+              <td></td>
+              <td class="weightKPI">10</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td class="selfRatingKPI">
+                <input
+                  type="number"
+                  class="form-control text-center"
+                  id="selfRatingKPIEfficiency"
+                  placeholder="Self Rating"
+                />
+              </td>
+              <td class="reportingKPI">
+                <input
+                  type="number"
+                  id="reportingKPIEfficiency"
+                  class="form-control text-center"
+                  placeholder="Reporting Rate"
+                />
+              </td>
+              <td class="scoreKPI" id="scoreKPIEfficiency"></td>
+            </tr>
+
+            <tr>
+              <td>b)</td>
+              <td class="text-left">Layout Management</td>
+              <td></td>
+              <td class="weightKPI">10</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td class="selfRatingKPI">
+                <input
+                  type="number"
+                  class="form-control text-center"
+                  id="selfRatingKPIE_LayouManagement"
+                  placeholder="Self Rating"
+                />
+              </td>
+              <td class="reportingKPI">
+                <input
+                  type="number"
+                  id="reportingKPI_LayouManagement"
+                  class="form-control text-center"
+                  placeholder="Reporting Rate"
+                />
+              </td>
+              <td class="scoreKPI" id="scoreKPI_LayouManagement"></td>
+            </tr>
+
+            <tr>
+              <td>c)</td>
+              <td class="text-left">Process reducing</td>
+              <td></td>
+              <td class="weightKPI">10</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td class="selfRatingKPI">
+                <input
+                  type="number"
+                  class="form-control text-center"
+                  id="selfRatingKPIE_ProcessReducing"
+                  placeholder="Self Rating"
+                />
+              </td>
+              <td class="reportingKPI">
+                <input
+                  type="number"
+                  id="reportingKPI_ProcessReducing"
+                  class="form-control text-center"
+                  placeholder="Reporting Rate"
+                />
+              </td>
+              <td class="scoreKPI" id="scoreKPI_ProcessReducing"></td>
+            </tr>
+
+            <tr>
+              <td>d)</td>
+              <td class="text-left">NPT Deduction</td>
+              <td></td>
+              <td class="weightKPI">10</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td class="selfRatingKPI">
+                <input
+                  type="number"
+                  class="form-control text-center"
+                  id="selfRatingKPIE_NPTDeduction"
+                  placeholder="Self Rating"
+                />
+              </td>
+              <td class="reportingKPI">
+                <input
+                  type="number"
+                  id="reportingKPI_NPTDeduction"
+                  class="form-control text-center"
+                  placeholder="Reporting Rate"
+                />
+              </td>
+              <td class="scoreKPI" id="scoreKPI_NPTDeduction"></td>
+            </tr>
+
+            <tr>
+              <td>e)</td>
+              <td class="text-left">Production Target Fullfilment</td>
+              <td></td>
+              <td class="weightKPI">10</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td class="selfRatingKPI">
+                <input
+                  type="number"
+                  class="form-control text-center"
+                  id="selfRatingKPIE_ProductionTargetFullfilment"
+                  placeholder="Self Rating"
+                />
+              </td>
+              <td class="reportingKPI">
+                <input
+                  type="number"
+                  id="reportingKPI_ProductionTargetFullfilment"
+                  class="form-control text-center"
+                  placeholder="Reporting Rate"
+                />
+              </td>
+              <td
+                class="scoreKPI"
+                id="scoreKPI_ProductionTargetFullfilment"
+              ></td>
+            </tr>
+          </tbody>
+          <tfoot class="bg-primary">
+            <tr>
+              <td colspan="3" class="bg-primary text-right fw-bold">
+                Sub Total =
+              </td>
+              <td class="text-center fw-bold" id="subtotalWeightKPI"></td>
+              <td class="text-center fw-bold"></td>
+              <td class="text-center fw-bold"></td>
+              <td class="text-center fw-bold"></td>
+              <td class="text-center fw-bold" id="subtotalSelfRatingKPI"></td>
+              <td class="text-center fw-bold" id="subtotalReportingKPI"></td>
+              <td class="text-center fw-bold" id="subtotalScoreKPI"></td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+
+      <!-- Overall Rating ( Aggregate Score )  -->
+      <div class="d-flex justify-content-start mt-3">
+        5. Aggregate Score Calculation (To be completed by HR Department) :
+      </div>
+      <div class="table-responsive">
+        <table class="table table-bordered text-center">
+          <tbody>
+            <tr>
+              <td>a)</td>
+              <td class="text-left">Score</td>
+              <td class="text-left">Accumulation of both scores (3)+(4)</td>
+              <td class="scoreAccumulation" id="scoreAccumulation"></td>
+            </tr>
+
+            <tr>
+              <td rowspan="2">b)</td>
+              <td rowspan="2" class="text-left">Score Deduction</td>
+              <td class="text-left">Warning for Misconduct (-) .25</td>
+              <td>
+                <input
+                  type="number"
+                  class="form-control text-center"
+                  id="WarningForMisconduct"
+                  placeholder="Warning for Misconduct"
+                />
+              </td>
+            </tr>
+
+            <tr>
+              <td class="text-left">Warning for Attendance (-) .25</td>
+              <td>
+                <input
+                  type="number"
+                  class="form-control text-center"
+                  id="WarningForAttendance"
+                  placeholder="Warning for Attendance"
+                />
+              </td>
+            </tr>
+
+            <tr>
+              <td>c)</td>
+              <td class="text-left">Additional Score</td>
+              <td class="text-left">For Reward/Achievement (+) .25</td>
+              <td class="selfRatingKPI">
+                <input
+                  type="number"
+                  class="form-control text-center"
+                  id="AdditionalScore"
+                  placeholder="Additional Score"
+                />
+              </td>
+            </tr>
+          </tbody>
+          <tfoot class="bg-primary">
+            <tr>
+              <td colspan="3" class="text-center fw-bold">Aggregated Score</td>
+              <td class="text-center fw-bold" id="AggregatedScore"></td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+
+      <!-- Development Plan for employees (If Required)  -->
+      <div class="d-flex justify-content-start mt-3">
+        6. Development Plan for employees (If Required) :
+      </div>
+      <div class="table-responsive">
+        <table class="table table-bordered text-center">
+          <thead class="bg-primary text-center fw-bold">
+            <tr>
+              <td>Development Area/Training</td>
+              <td>Timeline</td>
+              <td>Action</td>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <!-- <td>1.</td> -->
+              <td>
+                <textarea class="form-control d-flex"></textarea>
+              </td>
+              <td width="25%">
+                <input
+                  type="date"
+                  class="form-control text-center"
+                  placeholder="End Date"
+                />
+              </td>
+              <td width="15%">
+                <button type="button" class="btn btn-danger">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-trash3"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5M11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47M8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5"
+                    />
+                  </svg>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td
+                colspan="4"
+                class="text-center fw-bold"
+                id="addDevelopmentPlan"
+              >
+                <button type="button" class="btn btn-success" width="100%">
+                  + Add More Development Plan
+                </button>
+              </td>
+            </tr>
+          </tfoot>
+        </table>
       </div>
     </div>
   </body>
