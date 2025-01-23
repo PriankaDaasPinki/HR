@@ -1,15 +1,45 @@
 @media only screen and (max-width: 778px) {
   .Esquire_Logo {
-    display: flex!important;
+    display: flex !important;
     justify-content: center;
   }
 
   .table-bordered {
-    width: 100%!important;
-    margin: 1.5rem auto!important;
+    width: 100% !important;
+    margin: 1.5rem auto !important;
   }
 
-  span{
-    margin: 0 2rem!important;
+  span {
+    margin: 0 2rem !important;
+  }
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #printSection,
+  #printSection * {
+    visibility: visible;
+  }
+  #printSection {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  #actionColumn, .actionAdd, .actionColumn{
+    visibility: hidden;
+    display: none;
+  }
+
+  .d-flex {
+    display: flex !important; /* Ensure it remains flex during print */
+  }
+  .form-control {
+    border: 1px solid #000 !important; /* Adjust input styles for visibility */
+  }
+  .btn {
+    display: none !important; /* Hide buttons during print */
   }
 }

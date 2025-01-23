@@ -224,4 +224,10 @@ document.addEventListener("DOMContentLoaded", () => {
       deleteRow(this.closest("tr"));
     });
   });
+  
+
+  // Print functionality
+  document.getElementById("printForm").addEventListener("click", () => {
+    window.print();
+  });
 });
