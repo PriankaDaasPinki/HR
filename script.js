@@ -173,10 +173,11 @@ document.addEventListener("DOMContentLoaded", () => {
       <td>
         <textarea class="form-control d-flex"></textarea>
       </td>
-      <td width="25%">
+      <td width="25%" data-provide="datepicker">
         <input
-          type="date"
-          class="form-control text-center"
+          type=""
+          class="form-control text-center singledate"
+          id="daterange"
           placeholder="End Date"
         />
       </td>
@@ -201,6 +202,20 @@ document.addEventListener("DOMContentLoaded", () => {
     // Append the new row to the tbody
     tbody.appendChild(newRow);
 
+    // Reinitialize daterangepicker for the new input
+    $(newRow.querySelector(".singledate"))
+      .daterangepicker({
+        singleDatePicker: true,
+        showDropdowns: true,
+        locale: {
+          format: "YYYY-MM-DD",
+        },
+        autoUpdateInput: false,
+      })
+      .on("apply.daterangepicker", function (e, picker) {
+        picker.element.val(picker.startDate.format(picker.locale.format));
+      });
+
     // Optionally: Add functionality to remove the row using the delete button
     newRow.querySelector(".btn-danger").addEventListener("click", () => {
       // newRow.remove();
@@ -224,10 +239,22 @@ document.addEventListener("DOMContentLoaded", () => {
       deleteRow(this.closest("tr"));
     });
   });
-  
 
   // Print functionality
-  document.getElementById("printForm").addEventListener("click", () => {
-    window.print();
-  });
+  // document.getElementById("printForm").addEventListener("click", () => {
+  //   window.print();
+  // });
+
+  $(".singledate")
+    .daterangepicker({
+      singleDatePicker: true,
+      showDropdowns: true,
+      locale: {
+        format: "YYYY-MM-DD",
+      },
+      autoUpdateInput: false,
+    })
+    .on("apply.daterangepicker", function (e, picker) {
+      picker.element.val(picker.startDate.format(picker.locale.format));
+    });
 });

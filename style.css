@@ -1,3 +1,51 @@
+.ekcp{
+  background-color: #C5E0B3;
+}
+
+.pnii{
+  background-color: #BDD6EE;
+}
+
+.apprasialReason{
+  background-color: #FFE598;
+}
+
+.pir{
+  background-color: #BDD6EE;
+}
+
+.appraisalRule{
+  background-color: #CCFF99;
+}
+
+.ratingStandard{
+  background-color: #FFE598;
+}
+
+.negativePoints{
+  background-color: #C5E0B3;
+}
+
+.additionalPoints{
+  background-color: #BDD6EE;
+}
+
+.finalRule{
+  background-color: #FBD4B4;
+}
+
+.managingSelf{
+  background-color: #DEEAF6;
+}
+
+.managingResult{
+  background-color: #C5E0B3;
+}
+
+.managingPeople{
+  background-color: #FEF2CB;
+}
+
 @media only screen and (max-width: 778px) {
   .Esquire_Logo {
     display: flex !important;
