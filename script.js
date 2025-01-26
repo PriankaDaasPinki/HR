@@ -114,20 +114,39 @@ $(document).ready(function () {
     elements.AggregatedScore.text(finalScore.toFixed(2));
   };
 
-  // Helper to debounce input events
-  const debounce = (func, wait) => {
-    let timeout;
-    return (...args) => {
-      clearTimeout(timeout);
-      timeout = setTimeout(() => func(...args), wait);
-    };
-  };
-
   // Add event listeners for inputs
   const attachListeners = (inputs, callback) => {
     inputs.each((_, input) => {
-      $(input).on("input", debounce(callback, 300));
+      // Attach input event listener to each input
+      $(input).on(
+        "input",
+        debounce((event) => {
+          const value = event.target.value;
+
+          if (value === "" || isNaN(value)) {
+            event.target.value = "";
+            alert("Please enter a valid number between 0 and 100.");
+          } else if (value < 0 || value > 100) {
+            event.target.value = 0;
+            alert("Please enter a valid number between 0 and 100.");
+          } 
+
+          // Call the callback function (if provided) after sanitizing the value
+          if (callback) {
+            callback(event);
+          }
+        }, 300)
+      ); // Debounce to optimize performance
     });
+  };
+
+  // Debounce utility function
+  const debounce = (func, delay) => {
+    let timer;
+    return (...args) => {
+      clearTimeout(timer);
+      timer = setTimeout(() => func(...args), delay);
+    };
   };
 
   // Attach event listeners for dynamic recalculation
@@ -136,13 +155,11 @@ $(document).ready(function () {
   attachListeners(elements.selfRatingKPI, updateScoresAndSubtotals);
   attachListeners(elements.reportingKPI, updateScoresAndSubtotals);
   attachListeners(
-    $(
-      [
-        elements.WarningForMisconduct,
-        elements.WarningForAttendance,
-        elements.AdditionalScore,
-      ]
-    ),
+    $([
+      elements.WarningForMisconduct,
+      elements.WarningForAttendance,
+      elements.AdditionalScore,
+    ]),
     updateAggregatedScore
   );
 
@@ -178,16 +195,19 @@ $(document).ready(function () {
     tbody.append(newRow);
 
     // Reinitialize daterangepicker for the new input
-    newRow.find(".singledate").daterangepicker({
-      singleDatePicker: true,
-      showDropdowns: true,
-      locale: {
-        format: "YYYY-MM-DD",
-      },
-      autoUpdateInput: false,
-    }).on("apply.daterangepicker", function (e, picker) {
-      $(this).val(picker.startDate.format(picker.locale.format));
-    });
+    newRow
+      .find(".singledate")
+      .daterangepicker({
+        singleDatePicker: true,
+        showDropdowns: true,
+        locale: {
+          format: "YYYY-MM-DD",
+        },
+        autoUpdateInput: false,
+      })
+      .on("apply.daterangepicker", function (e, picker) {
+        $(this).val(picker.startDate.format(picker.locale.format));
+      });
 
     // Add delete functionality to the new row's delete button
     newRow.find(".btn-danger").on("click", function () {
@@ -211,14 +231,16 @@ $(document).ready(function () {
   });
 
   // Initialize datepickers
-  $(".singledate").daterangepicker({
-    singleDatePicker: true,
-    showDropdowns: true,
-    locale: {
-      format: "YYYY-MM-DD",
-    },
-    autoUpdateInput: false,
-  }).on("apply.daterangepicker", function (e, picker) {
-    $(this).val(picker.startDate.format(picker.locale.format));
-  });
+  $(".singledate")
+    .daterangepicker({
+      singleDatePicker: true,
+      showDropdowns: true,
+      locale: {
+        format: "YYYY-MM-DD",
+      },
+      autoUpdateInput: false,
+    })
+    .on("apply.daterangepicker", function (e, picker) {
+      $(this).val(picker.startDate.format(picker.locale.format));
+    });
 });

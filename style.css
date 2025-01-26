@@ -46,6 +46,18 @@
   background-color: #FEF2CB;
 }
 
+.scoreCol{
+  min-width: 90px;
+  text-align: center;
+}
+
+
+.backButton{
+  position: fixed;
+  background-color: rgba(64, 64, 64, 0.7);
+  border-radius: 4px;
+}
+
 @media only screen and (max-width: 778px) {
   .Esquire_Logo {
     display: flex !important;
