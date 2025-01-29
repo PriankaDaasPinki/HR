@@ -85,7 +85,7 @@
   #printSection {
     position: absolute;
     top: 0;
-    left: 0;
+    left: 25px;
   }
 
   #actionColumn, .actionAdd, .actionColumn{
